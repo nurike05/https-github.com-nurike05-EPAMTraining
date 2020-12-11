@@ -1,0 +1,9 @@
+csc program.cs		// создаем program.exe файл
+
+sn -k codeblog.snk	// создаем private/public криптографическую пару ключей сборки
+
+csc /keyfile:codeblog.snk program.cs	// подписываем сборку закрытым ключом
+
+gacutil /i program.exe 			// добавляем сборку в GAC
+
+gacutil /u program			// удаляем сборку с GAC
